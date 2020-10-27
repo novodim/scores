@@ -52,12 +52,32 @@ staffMelodyIntro = \relative c {
   g f g e
   d16 e f g a b c d \break
 }
+
+
+theChordsCoda = \chordmode {
+  % insert chords for chordnames and fretboards here
+  c2 c c c
+}
+
+staffMelodyCoda = \relative c'' {
+   \key c \major
+   \clef treble
+   % Type notes for melody here
+     \time 2/4
+\tempo 4 = 80
+    d8 b g' d
+    e g, d' a
+    d8 b g' d
+    c16 e g c <c, e g c>4
+\break
+}
+
 theChords = \chordmode {
   % insert chords for chordnames and fretboards here
-  c2 e:m g c
+  c2 d:m g c
   a:m d:m g c
   c f f c
-  c e:m g c
+  c d:m g c
 }
 
 staffMelody = \relative c {
@@ -111,4 +131,14 @@ staffMelody = \relative c {
   \layout { }
   \midi { }
 
+}
+
+
+\score {
+    <<
+  \context ChordNames { \theChordsCoda }
+  \new Staff {
+      \context Voice = "voiceMelody" { \staffMelodyCoda }
+    }
+    >>
 }
