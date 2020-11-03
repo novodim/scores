@@ -35,21 +35,22 @@ verseIII = \lyricmode {
 }
 
 theChordsIntro = \chordmode {
-a:7  d:m  g  c   f  d:m  e  a:m      
-a:7  d:m  g  c   f  a:m  e  a:m
+a4:7  d:m  g  c 
+f  d:m  e  a:m      
+a:7  d:m  g  c   
+f  a:m  e  a:m
 }
 
 staffMelodyIntro = \relative c'' {
    \key f \major
    \clef treble
-   % Type notes for melody here
-     \time 4/4
-\tempo 4 = 80
+   \time 4/4
+   \tempo 4 = 80
 
-a16 g a g a c c b a f e d d' c a8 \break
-f16 e f e f a a g f e d c d e f g8 \break
-a16 g a g a c c b a f e d d' c a8 \break
-c16 b a g f e8 b'16 a g f e d d8 c2 d2 \break
+   a16 gis a gis a c c bes a f e d' c a8. \break
+   f16 e f e f a a g f e d cis d e f8 g16 \break
+   a16 gis a gis a c c bes a f e d d' ces a8 \break
+   c16 b a g f e8 b'16 a g f e d d8 c2 d2 \break
 
 }
 
