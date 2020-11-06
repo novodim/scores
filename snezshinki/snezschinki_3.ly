@@ -99,6 +99,23 @@ staffMelody = \relative c {
   d8 c8 d8 b8 c2 \break
   \bar ":|."
 }
+
+
+staffBass = \relative c {
+   \key c \major
+   \clef treble
+   % Type notes for melody here
+     \time 2/4
+\bar ".|:"
+  e'2 f2 d2 e2
+  c2 d2  b2 c2
+  c2 a'2  f2 g2
+  e2 f2 d2 c2
+  \bar ":|."
+}
+
+
+
 \score {
     <<
   \context ChordNames { \theChordsIntro }
@@ -117,7 +134,11 @@ staffMelody = \relative c {
     \new Staff {
       \context Voice = "voiceMelody" { \staffMelody }
     }
-    \new Lyrics = "lyricsI" {
+    \new Staff {
+      \context Voice = "voiceMelody" { \staffBass }
+    }
+
+  \new Lyrics = "lyricsI" {
       \lyricsto "voiceMelody" \verseI
     }
     \new Lyrics = "lyricsII" {
